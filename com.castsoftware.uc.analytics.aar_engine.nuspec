@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
-        <id>com.castsoftware.analytics.aar_engine</id>
+        <id>com.castsoftware.uc.analytics.aar_engine</id>
         <version>1.0</version>
         <title>Advanced Analytics Reporting (AAR) engine</title>
-        <authors>Marco Marchisio</authors>
+        <authors>CAST Labs</authors>
         <owners>CAST Software</owners>
-        <licenseUrl>https://www.gnu.org/licenses/lgpl-3.0-standalone.html</licenseUrl>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/PhilippeGuerin/CASTAAR/wiki</projectUrl>
+	 <iconUrl>https://raw.githubusercontent.com/PhilippeGuerin/CASTAAR/master/CASTAAR.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>AAR enables new way to consume CAST analytics. AAR support building of production grade ad-hoc dashboard and reports that better cater to specific needs and goal of IT management and business users.  AAR is uery engine that support a variety of NoSQL databases and file systems. Using AAR you can blend data from CAST Rest API response, to text file output to a psql query to a Central Schema to a user profile collection in MongoDB</description>
         <summary>AAR enables new way to consume CAST analytics. AAR support building of production grade ad-hoc dashboard and reports that better cater to specific needs and goal of IT management and business users.</summary>
         <releaseNotes>First open version released publicly outside of CAST</releaseNotes>
         <copyright>CAST Software 2016-2020</copyright>
         <language>en-US</language>
-        <tags>AAR</tags>
+        <tags>Reporting Utility FPQuality CSS CAIP8.0.x CAIP8.1.x CAIP8.2.x AAR</tags>
         <dependencies>
             <group targetFramework="MS PowerShell0.0" />
             <group targetFramework="Apache Drill1.6" />
