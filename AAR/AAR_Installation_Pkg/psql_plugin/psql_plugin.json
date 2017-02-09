@@ -1,0 +1,10 @@
+{ "name" : "AAR_psql",
+ "config" : {
+  "type": "jdbc",
+  "driver": "org.postgresql.Driver",
+  "url": "jdbc:postgresql://localhost:2280/postgres",
+  "username": "operator",
+  "password": "CastAIP",
+  "enabled": false
+}
+}

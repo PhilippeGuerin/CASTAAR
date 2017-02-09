@@ -1,0 +1,9 @@
+SELECT *, 'CLIENT' AS functionaldomainname
+FROM `dfs`.`CLIENT Views`.`CLIENT_Cost_Risk_Compliance`
+
+UNION
+
+SELECT RC.*, FD.columns[1] AS functionaldomainname
+FROM `dfs`.`CLIENT Views`.`APMQ_Risk_Cost_Compliance` AS RC
+,`dfs`.`CLIENT Inputs`.`APMQ-Functional_Domain.csv` AS FD
+WHERE RC.appname = FD.columns[0]

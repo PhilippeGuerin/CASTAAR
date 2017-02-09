@@ -1,0 +1,27 @@
+{ "name" : "XXX",
+ "config" : { "type": "file", 
+ "enabled": true,
+ "connection": "file:///", 
+ "workspaces": { 
+	"XXX Inputs": 
+		{ "location": "C:\\Accounts\\XXX\\Inputs", 
+		"writable": true, "defaultInputFormat": null }, 
+		"XXX Views": { 
+			"location": "C:\\Accounts\\XXX\\Views", 
+			"writable": true, "defaultInputFormat": null } }
+		, "formats": 
+			{ "psv": { 
+				"type": "text", 
+				"extensions": [ "psv" ], 
+			"delimiter": "|" }, 
+			"csv":
+					{ "type": "text",
+					"extensions": [ "csv" ],
+					"delimiter": "," },
+					"tsv": { "type": "text",
+					"extensions": [ "tsv" ], 
+					"delimiter": "\t" },
+					"parquet": { "type": "parquet" },
+					"json": { "type": "json" },
+					"avro": { "type": "avro" } }}}
+ 

@@ -1,0 +1,8 @@
+SELECT columns[0] AS bc_id, columns[1] AS bc_name, columns[2] AS tc_id
+, columns[3] AS tc_name
+, columns[6] AS metric_id, columns[7] AS metric_name, 
+ columns[10] AS metric_weight
+
+FROM `dfs`.`CLIENT Inputs`.`CLIENT-Quality_Model.csv`
+
+where columns[10] IN (7,8,9)

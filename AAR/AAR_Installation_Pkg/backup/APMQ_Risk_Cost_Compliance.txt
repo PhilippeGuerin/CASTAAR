@@ -1,0 +1,7 @@
+SELECT rc.snapshot, rc.appname, rc.risk_type, SUM(rc.totalChecks) AS checks
+, SUM(rc.successChecks) AS succes
+
+FROM `dfs`.`CLIENT Views`.`APMQ_Risk_Cost` AS rc
+
+
+GROUP BY rc.snapshot, rc.appname, rc.risk_type

@@ -1,0 +1,14 @@
+SELECT c1.snapshot, c1.appname, c1.risk_type, SUM(c1.checks) AS checks
+, SUM(c1.success) AS success
+
+FROM (SELECT c.snapshot, c.appname
+, c.bc_name, SUM(c.checks) AS checks, SUM(c.success) AS success
+, CASE WHEN c.bc_name IN ('Robustness', 'Security', 'Performance', 'Efficiency') THEN 'RISK' 
+WHEN c.bc_name IN ('Changeability', 'Transferability') THEN 'COST' ELSE NULL END AS risk_type
+
+FROM `dfs`.`CLIENT Views`.`CLIENT_QualityModel_Compliance` AS c WHERE c.bc_name 
+IN ('Robustness', 'Security', 'Efficiency', 'Performance', 'Changeability', 'Transferability')
+
+GROUP BY c.snapshot, c.appname, c.bc_name) AS c1
+
+GROUP BY c1.snapshot, c1.appname, c1.risk_type

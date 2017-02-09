@@ -1,0 +1,10 @@
+SELECT qr.snapshot, qr.appname, qr.f['reference']['key'] AS metric_id
+, qr.f['reference']['name'] AS metric_name
+, qr.f['result']['violationRatio']['totalChecks'] AS checks
+, qr.f['result']['violationRatio']['failedChecks'] AS failed
+, qr.f['result']['violationRatio']['successfulChecks'] AS success
+
+FROM (SELECT t.number AS snapshot, t.applicationSnapshot['name'] AS appname
+, FLATTEN(t.applicationResults) AS f
+
+FROM `dfs`.`CLIENT Inputs`.`./CLIENT-Compliance.json` AS t) AS qr

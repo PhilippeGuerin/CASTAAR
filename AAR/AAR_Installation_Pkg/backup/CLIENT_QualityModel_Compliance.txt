@@ -1,0 +1,7 @@
+SELECT c.appname, c.snapshot, c.checks, c.failed, c.success, qm.*
+
+FROM `dfs`.`CLIENT Views`.`CLIENT_QualityModel` AS qm
+
+INNER JOIN  `dfs`.`CLIENT Views`.`CLIENT_Compliance` AS c 
+
+ON qm.metric_id = c.metric_id

@@ -1,0 +1,27 @@
+{ "name" : "dfs",
+ "config" : { "type": "file", 
+ "enabled": true,
+ "connection": "file:///", 
+ "workspaces": { 
+	"CLIENT Inputs": 
+		{ "location": "C:\\AAR\\Inputs", 
+		"writable": true, "defaultInputFormat": null }, 
+	"CLIENT Views": { 
+			"location": "C:\\AAR\\Views", 
+			"writable": true, "defaultInputFormat": null } }
+		, "formats": 
+			{ "psv": { 
+				"type": "text", 
+				"extensions": [ "psv" ], 
+			"delimiter": "|" }, 
+			"csv":
+					{ "type": "text",
+					"extensions": [ "csv" ],
+					"delimiter": "," },
+					"tsv": { "type": "text",
+					"extensions": [ "tsv" ], 
+					"delimiter": "\t" },
+					"parquet": { "type": "parquet" },
+					"json": { "type": "json" },
+					"avro": { "type": "avro" } }}}
+ 

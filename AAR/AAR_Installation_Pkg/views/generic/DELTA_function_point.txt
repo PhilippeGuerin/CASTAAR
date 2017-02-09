@@ -1,0 +1,18 @@
+SELECT
+   fp.snapshot,
+   fp.snapshot_date,
+   fp.snapshot_order,
+   fp.snapshot_td,
+   fp.appname,
+   fp.appResults.reference.name as measure_type,
+   fp.appResults.reference.shortName as measure_shortName,
+   fp.appResults.`result`.`value` as fp_value
+FROM
+(SELECT 
+   fpj.number as snapshot,
+   DENSE_RANK() OVER(PARTITION BY fpj.application.name ORDER BY fpj.number DESC) as snapshot_order,
+   fpj.`date`.isoDate as snapshot_date,
+   fpj.`date`.`time` AS snapshot_td,
+   fpj.application.name as appname,
+   FLATTEN(fpj.applicationResults) as appResults
+FROM `dfs`.`XXX Inputs`.`./CLIENT-FP.json` as fpj) AS fp

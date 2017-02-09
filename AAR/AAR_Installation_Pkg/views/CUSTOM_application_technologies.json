@@ -1,0 +1,1 @@
+{"queryType":"SQL", "query": "create or replace view `dfs`.`AAR  Views`.CUSTOM_application_technologies as   SELECT `a`.`name` AS `appname`,    `FLATTEN`(`a`.`technologies`) AS `application_technology`   FROM `dfs`.`AAR  Inputs`.`./CLIENT-Application.json` AS `a`   "}

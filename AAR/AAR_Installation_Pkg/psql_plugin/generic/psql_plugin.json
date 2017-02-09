@@ -1,0 +1,10 @@
+{ "name" : "AAR_psql",
+ "config" : {
+  "type": "jdbc",
+  "driver": "org.postgresql.Driver",
+  "url": "jdbc:postgresql://_SERVER:_PORT/_DB_NAME",
+  "username": "_USER",
+  "password": "_PASSWORD",
+  "enabled": false
+}
+}

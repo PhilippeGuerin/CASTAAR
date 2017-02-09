@@ -1,0 +1,10 @@
+SELECT c1.tc_name, c1.snapshot, SUM(c1.checks) AS checks, SUM(c1.success) AS success
+
+FROM (SELECT c.snapshot, c.tc_name, SUM(c.checks) AS checks, SUM(c.success) AS success
+
+
+FROM `dfs`.`CLIENT Views`.`CLIENT_QualityModel_Compliance` AS c
+
+GROUP BY c.tc_name, c.snapshot) AS c1
+
+GROUP BY c1.tc_name, c1.snapshot

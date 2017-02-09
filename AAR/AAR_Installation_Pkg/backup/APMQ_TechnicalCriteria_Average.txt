@@ -1,0 +1,10 @@
+SELECT am.tcName, SUM(am.successChecks) as success, SUM(am.totalChecks) as checks
+
+	FROM (SELECT columns[0] AS concat, columns[1] AS snapshot, columns[2] AS bcName
+		, columns[3] AS bcID, columns[4] AS tcName, columns[5] AS tcID, columns[6] AS metricName
+		, columns[7] AS metricID, CAST(columns[8] AS DOUBLE) AS totalChecks, CAST(columns[9] AS DOUBLE) AS failedChecks
+		, CAST(columns[10] AS DOUBLE) AS successChecks
+		
+			FROM `dfs`.`CLIENT Inputs`.`APMQ-Compliance.csv`) AS am
+
+GROUP BY am.tcName
